@@ -1,0 +1,22 @@
+Required components:
+
+App {
+    NavBar {
+        NavLink
+    }
+    Intro {
+        (Media)
+        (Text)
+    }
+    ProjectList {
+        ProjectCard {
+            (Title)
+            (Description)
+            (Midia)
+        }
+    }
+    GuestBook {
+        (Name)
+        (Company)
+    }
+}
