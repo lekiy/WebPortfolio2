@@ -16,6 +16,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .project-card {
@@ -29,8 +31,6 @@ body {
   border-radius: 15px;
   color: var(--color_forth);
   position: relative;
-  margin-top: -3.1in;
-  top: 3in;
   z-index: 1;
 }
 
@@ -86,7 +86,7 @@ body {
     transform: translate(0, 0%);
   }
   100% {
-    transform: translate(0, -4%);
+    transform: translate(0, -15%);
   }
 }
 
@@ -119,27 +119,33 @@ body {
   pointer-events: none;
 }
 
-.project-card:hover {
-  animation: pop_small 0.2s linear 0s 1 normal both,
-    wiggle 0.5s linear 0s infinite;
+.project-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100vh;
 }
 
 .project-list {
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 @keyframes expose {
   0% {
-    transform: translate(0px);
+    transform: translate(0, 0px);
   }
   100% {
-    transform: translate(300px);
+    transform: translate(0, -300px);
   }
 }
 
 .exposed {
-  animation: expose 0.5s ease-in 0.1s 1 normal both;
+  animation: expose 0.5s ease-in 0.1s 1 alternate forwards;
+}
+
+.wiggle-on-hover:hover {
+  animation: pop_small 0.2s linear 0s 1 normal both,
+    wiggle 0.5s linear 0s infinite;
 }
