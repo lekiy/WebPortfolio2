@@ -1,4 +1,3 @@
-import "./App.css";
 import GuestBook from "./components/GuestBook";
 import Intro from "./components/Intro";
 import NavBar from "./components/NavBar";
