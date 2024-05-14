@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 
 type ProjectType = {
   key: string;
@@ -9,6 +9,7 @@ type ProjectType = {
   isSelected: boolean;
   rotation: number;
   xOffset: number;
+  yOffset: number;
 };
 
 function ProjectCard({
@@ -19,21 +20,20 @@ function ProjectCard({
   isSelected,
   rotation,
   xOffset,
+  yOffset,
 }: ProjectType) {
-  if (isSelected) {
-    console.log("selected");
-  }
-
   return (
     <div
-      style={{ translate: `${-xOffset}rem`, rotate: `${rotation}deg` }}
+      style={{
+        translate: isSelected
+          ? `${-xOffset * 1.27}rem ${yOffset - 27}rem`
+          : `${-xOffset}rem ${yOffset}rem`,
+        rotate: isSelected ? "0deg" : `${rotation}deg`,
+        scale: isSelected ? "1.5 1.5" : "0.8 0.8",
+      }}
       id={title}
       onClick={onClick}
-      className={
-        isSelected
-          ? "project-card exposed"
-          : "project-card unexposed wiggle-on-hover"
-      }
+      className={"project-card"}
     >
       <div className="project-card-content">
         <h2 className="project-title">{title}</h2>

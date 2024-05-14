@@ -9,6 +9,10 @@ import ProjectCard from "./ProjectCard";
 import { projectData } from "./ProjectData";
 
 function ProjectList() {
+  const rotationOffset = 5;
+  const xOffset = 6;
+  const yOffset = 1;
+
   const [targetCard, setTargetCard] = useState<string>("");
 
   const handleCardClick = useCallback((e: SyntheticEvent) => {
@@ -26,8 +30,15 @@ function ProjectList() {
           {...project}
           onClick={handleCardClick}
           isSelected={project.title === targetCard}
-          rotation={projectData.length * -2 + index * 4 + 2}
-          xOffset={projectData.length * -6 + index * 12 + 6}
+          rotation={
+            projectData.length * -rotationOffset +
+            index * rotationOffset * 2 +
+            rotationOffset
+          }
+          xOffset={
+            projectData.length * -xOffset + index * xOffset * 2 + xOffset
+          }
+          yOffset={yOffset * index * 0.2 + 13}
         ></ProjectCard>
       );
     });

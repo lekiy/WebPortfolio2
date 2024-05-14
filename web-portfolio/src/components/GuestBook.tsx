@@ -1,5 +1,5 @@
 function GuestBook() {
-  return <div>Guest Book</div>;
+  return <div className="guest-book">Guest Book</div>;
 }
 
 export default GuestBook;
