@@ -26,10 +26,11 @@ function ProjectCard({
     <div
       style={{
         translate: isSelected
-          ? `${-xOffset * 1.27}rem ${yOffset - 27}rem`
+          ? `${-xOffset * 1.275}rem ${yOffset - 25}rem`
           : `${-xOffset}rem ${yOffset}rem`,
         rotate: isSelected ? "0deg" : `${rotation}deg`,
-        scale: isSelected ? "1.5 1.5" : "0.8 0.8",
+        scale: isSelected ? "1.2 1.2" : "0.8 0.8",
+        pointerEvents: isSelected ? "none" : "inherit",
       }}
       id={title}
       onClick={onClick}

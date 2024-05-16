@@ -33,6 +33,11 @@ body {
   position: relative;
   z-index: 1;
   transition-property: rotate translate scale;
+  transition-duration: 0.2s;
+}
+
+.project-card:hover {
+  transform: translate(0, -5rem);
   transition-duration: 0.5s;
 }
 
@@ -83,33 +88,6 @@ body {
   pointer-events: none;
 }
 
-@keyframes pop_small {
-  0% {
-    transform: translate(0, 0%);
-  }
-  100% {
-    transform: translate(0, -15%);
-  }
-}
-
-@keyframes wiggle {
-  0% {
-    rotate: 0deg;
-  }
-  25% {
-    rotate: -2deg;
-  }
-  50% {
-    rotate: 0deg;
-  }
-  75% {
-    rotate: 2deg;
-  }
-  100% {
-    rotate: 0deg;
-  }
-}
-
 .project-thumbnail {
   object-fit: cover;
   position: relative;
@@ -125,10 +103,10 @@ body {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  height: 80vh;
+  height: 100vh;
   overflow-y: hidden;
   background-color: darkgray;
-  width: 50vw;
+  width: 80vw;
   overflow: hidden;
   border: 3px solid var(--color_forth);
 }
