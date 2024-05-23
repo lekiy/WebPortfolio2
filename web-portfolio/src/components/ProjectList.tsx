@@ -16,8 +16,8 @@ function ProjectList() {
   const [targetCard, setTargetCard] = useState<string>("");
 
   const handleCardClick = useCallback((e: SyntheticEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
+    // e.preventDefault();
+    // e.stopPropagation();
     setTargetCard(e.currentTarget.id);
   }, []);
 

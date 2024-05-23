@@ -33,12 +33,12 @@ body {
   position: relative;
   z-index: 1;
   transition-property: rotate translate scale;
-  transition-duration: 0.2s;
+  transition-duration: 0.4s;
 }
 
-.project-card:hover {
+.project-card-hover:hover {
   transform: translate(0, -5rem);
-  transition-duration: 0.5s;
+  transition-duration: 0.4s;
 }
 
 .project-title {

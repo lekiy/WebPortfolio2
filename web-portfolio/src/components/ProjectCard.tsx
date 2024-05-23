@@ -26,7 +26,7 @@ function ProjectCard({
     <div
       style={{
         translate: isSelected
-          ? `${-xOffset * 1.275}rem ${yOffset - 25}rem`
+          ? `${-xOffset * 1.275}rem ${yOffset - 23}rem`
           : `${-xOffset}rem ${yOffset}rem`,
         rotate: isSelected ? "0deg" : `${rotation}deg`,
         scale: isSelected ? "1.2 1.2" : "0.8 0.8",
@@ -34,7 +34,9 @@ function ProjectCard({
       }}
       id={title}
       onClick={onClick}
-      className={"project-card"}
+      className={
+        isSelected ? "project-card" : "project-card project-card-hover"
+      }
     >
       <div className="project-card-content">
         <h2 className="project-title">{title}</h2>
